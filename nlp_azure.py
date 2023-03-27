@@ -59,7 +59,7 @@ def azure_speech_to_text(audio_file_path):
     print("Printing all results:")
     print(all_results)    
     with open("source_of_knowledge/output.txt", "w") as f:
-        f.write(all_results)
+        f.write(all_results[0])
 
 # api call - doesn't work.
 # def getText(audio_file_path):
