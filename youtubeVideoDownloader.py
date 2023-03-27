@@ -12,5 +12,5 @@ def getAudioFrom(link, output_path, file_name):
 
 # Example usage
 #link = "https://www.youtube.com/watch?v=cp9GXl9Qk_s" 
-link = "https://www.youtube.com/watch?v=Rwgux6vo9qs"
-getAudioFrom(link, output_path='source_of_knowledge', file_name='youtubeAudio.mp4')
+# link = "https://www.youtube.com/watch?v=Rwgux6vo9qs"
+# getAudioFrom(link, output_path='source_of_knowledge', file_name='youtubeAudio.mp4')
