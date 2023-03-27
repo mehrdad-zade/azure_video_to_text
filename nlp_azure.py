@@ -17,6 +17,7 @@ def getTextSdk(audio_file_path):
     # Print the transcribed text
     print(result.text)
 
+# api call - doesn't work.
 # def getText(audio_file_path):
 
 #     # Set the headers
@@ -39,7 +40,7 @@ def getTextSdk(audio_file_path):
 #     print(response.status_code)  
 #     # print(response.json()['DisplayText'])
    
-
+# the sdk doesn't need this.
 # def getAccessToken():
 #     headers = {
 #         'Ocp-Apim-Subscription-Key': azure_speech2text_subscription_token
