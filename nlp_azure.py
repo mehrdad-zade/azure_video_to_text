@@ -4,13 +4,14 @@ from secrets_custom import azure_speech2text_subscription_token, azure_speech2te
 def getTextSdk(audio_file_path):
     # Set up the speech configuration
     speech_config = speechsdk.SpeechConfig(subscription=azure_speech2text_subscription_token, region=azure_speech2text_region)
-
+    speech_config.set_property(speechsdk.PropertyId.SpeechServiceConnection_EndSilenceTimeoutMs, '15000000')
+    
     # Set up the audio configuration
     audio_config = speechsdk.AudioConfig(filename=audio_file_path)
 
     # Create a speech recognizer
     speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
-
+    
     # Recognize speech from the audio file
     result = speech_recognizer.recognize_once()
 
