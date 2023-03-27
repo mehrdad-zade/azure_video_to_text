@@ -1,6 +1,6 @@
 import youtubeVideoDownloader
 from formatter_custom import mp4_2_wav
-import nlp_azure
+from nlp_azure import azure_speech_to_text
 
 def main():
     '''
@@ -12,7 +12,7 @@ def main():
     '''
 
     print("-------------------------------------------")
-    nlp_azure.getTextSdk('source_of_knowledge/output.wav') #success: but doesn't give the entire text.
+    azure_speech_to_text('source_of_knowledge/output.wav') #success: but doesn't give the entire text.
     print("-------------------------------------------")
 
 

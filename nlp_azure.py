@@ -3,7 +3,7 @@ import time
 import datetime
 from secrets_custom import azure_speech2text_subscription_token, azure_speech2text_region
 
-def getTextSdk(audio_file_path):
+def azure_speech_to_text(audio_file_path):
     # Set up the speech configuration
     speech_config = speechsdk.SpeechConfig(subscription=azure_speech2text_subscription_token, region=azure_speech2text_region)
     
@@ -32,10 +32,10 @@ def getTextSdk(audio_file_path):
     done = False
 
     def stop_cb(evt):
-        # print('CLOSING on {}'.format(evt))
+        print('CLOSING on {}'.format(evt))
         speech_recognizer.stop_continuous_recognition()
-        global done
-        done= True    
+        nonlocal done
+        done = True    
 
     #Appends the recognized text to the all_results variable. 
     speech_recognizer.recognized.connect(handle_final_result) 
@@ -58,6 +58,8 @@ def getTextSdk(audio_file_path):
         
     print("Printing all results:")
     print(all_results)    
+    with open("source_of_knowledge/output.txt", "w") as f:
+        f.write(all_results)
 
 # api call - doesn't work.
 # def getText(audio_file_path):
